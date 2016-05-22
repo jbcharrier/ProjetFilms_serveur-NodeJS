@@ -1,0 +1,9 @@
+<h1> list view</h1>
+
+<ul>
+    <li ng-repeat="film in films"> {{ film.name }}
+        <a ng-href="#/details/{{film.name}}">Détails</a>
+        <a ng-href="#/edit/{{ film.name}}">edit</a>
+    </li>
+</ul>
+<a ng-href="#/create">Ajouter un film</a>

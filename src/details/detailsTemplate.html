@@ -1,0 +1,13 @@
+<h1>Detail du film</h1>
+
+<h2>{{film.name}}</h2>
+
+<img ng-src="film.affiche" alt="affiche non reconnue">
+<ul>
+    <li>Sorti en {{Date(film.releaseDate)}}</li>
+    <li>Réalisé par {{film.realisator}}</li>
+    <li>Avec <span ng-repeat="actor in film.actors">{{actor.name}}</span></li>
+    <li>Score : {{film.rating}}</li>
+</ul>
+
+<a ng-href="/#/">Retour à la liste</a>

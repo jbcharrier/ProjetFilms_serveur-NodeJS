@@ -1,0 +1,22 @@
+{
+  "name": "ProjetFilms",
+  "description": "Projet Garage 56 de creation d'une API REST sur une liste de films",
+  "main": "",
+  "authors": [
+    "JB Charrier"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.5",
+    "angular-resource": "^1.5.5",
+    "angular-route": "^1.5.5"
+  }
+}
