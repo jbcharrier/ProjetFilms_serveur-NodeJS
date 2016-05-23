@@ -1,4 +1,4 @@
-angular.module('main', ['ngRoute', 'ngResource']);
+angular.module('main', ['ngRoute', 'ngResource', 'ui-bootstrap', require('angular-animate'), require('angular-touch'), 'bootstrap-css-only']);
 
 angular.module('main').config(function ($routeProvider, $locationProvider) {
 
