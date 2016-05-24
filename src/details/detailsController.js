@@ -6,7 +6,4 @@ angular.module('main')
         Film.get(id).then(function (film) {
             $scope.film = film.data;
         });
-
-
-
     });

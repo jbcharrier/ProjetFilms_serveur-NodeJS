@@ -1,11 +1,12 @@
-angular.module('main', ['ngRoute', 'ngResource', 'ui-bootstrap', require('angular-animate'), require('angular-touch'), 'bootstrap-css-only']);
+angular.module('main', ['ngRoute', 'ngResource']);
 
-angular.module('main').config(function ($routeProvider, $locationProvider) {
+angular.module('main').config(function ($routeProvider) {
 
     $routeProvider
         .when('/list', {
             templateUrl: 'list/listTemplate.html',
-            controller: 'listController'
+            controller: 'listController',
+            //reloadOnSearch: 'true'
         })
         .when('/edit/:id', {
             templateUrl: 'edit/editTemplate.html',

@@ -1,38 +1,47 @@
-<h1>edit view</h1>
+<div class="container">
+    <main class="text-center" id="main-edit-view">
+<h1>Edit View</h1>
 
-<form>
+<form name="myEditForm">
+    <div class="form-group">
 
     <label>
-        name
-        <input type="text" ng-model="film.name">
+        Name
+        <input class="form-control input-lg " type="text" ng-model="film.name" id="filmName" required>
     </label>
     <br/>
 
     <label>
-        affiche
-        <input type="text" ng-model="film.affiche">
+        Affiche
+        <input class="form-control input-lg" type="text" ng-model="film.affiche">
     </label>
     <br/>
     <label>
-        realisateur
-        <input type="text" ng-model="film.realisator">
+        Réalisateur
+        <input class="form-control input-lg" type="text" ng-model="film.realisator">
     </label>
     <br/>
     <!--<input type="text" ng-model="film.actors">-->
     <label>
-        date de sortie
-        <input type="text" ng-model="film.releaseDate">
+        Date de sortie
+        <input class="form-control input-lg" type="text" ng-model="film.releaseDate">
     </label>
     <br/>
-    <label>
-        note
-        <input type="text" ng-model="film.rating">
+    <!--<label>
+        Note
+        <input class="form-control input-lg" type="text" ng-model="film.rating">
     </label>
-    <br/>
+    <br/>-->
+        <label>
+            <select ng-model="film.rating" name="rating"  ng-options="rate.value as rate.label for rate in filmRating" class="form-control input-lg" required></select>
+            {{film.rating}}
+        </label>
+        <br/>
+    <button class="btn btn-success btn-lg" ng-click="save(film)" ng-disabled="">SAVE</button>
 
-    <button ng-click="save(film)">save</button>
-
-
+    </div>
 </form>
 
-<a ng-href="/#/">Retour à la liste</a>
+<a class="btn btn-default btn-sm btn-primary btn-return" ng-href="/#/">Retour à la liste</a>
+</main>
+</div>

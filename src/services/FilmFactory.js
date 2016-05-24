@@ -1,7 +1,7 @@
 angular.module('main')
     .factory('Film', function ($http) {
 
-        var path = 'http://localhost:3000/films/';
+        var path = 'http://localhost:3002/films/';
 
         function getFilm(id) {
             return $http.get(path + id);

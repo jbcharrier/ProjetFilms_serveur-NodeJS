@@ -30,7 +30,7 @@ gulp.task('html', function(){
 gulp.task('serve', function(){
     browsersync.init({
         server: {
-            baseDir: "./src"
+            baseDir: ["./src", './']
         }
     });
 });

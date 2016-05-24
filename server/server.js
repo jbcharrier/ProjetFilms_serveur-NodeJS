@@ -27,7 +27,7 @@ app.engine('html', swig.renderFile);
 app.set('view engine', 'html');
 
 
-var port = process.env.PORT || '3000';
+var port = process.env.PORT || '3002';
 app.set('port', port);
 
 

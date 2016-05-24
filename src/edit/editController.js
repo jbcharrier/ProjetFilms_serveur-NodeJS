@@ -9,7 +9,10 @@ angular.module('main')
 
         $scope.save = function (film) {
             Film.save(id, film);
-        }
+        };
 
+        $scope.filmRating = [{label: "*", value: "Nanar"}, {label: "**", value: "Bof"}, {label: "***", value: "Pas mal"}, {label: "****", value: "Top"}, {label: "*****", value: "Chef d'oeuvre"}];
+
+        
 
     });
