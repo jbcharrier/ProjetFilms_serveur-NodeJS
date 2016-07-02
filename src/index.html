@@ -1,31 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <head>
+        <meta charset="UTF-8">
 
+        <title>Title</title>
 
-    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="main.css" rel="stylesheet">
+        <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="main.css" rel="stylesheet">
 
-    <script src="../bower_components/angular/angular.js"></script>
-    <script src="../bower_components/angular-resource/angular-resource.js"></script>
-    <script src="../bower_components/angular-route/angular-route.js"></script>
-    <script src="../node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
-    <script src="../node_modules/angular-animate/angular-animate.js"></script>
-    <script src="../node_modules/angular-touch/angular-touch.js"></script>
+        <script src="../bower_components/angular/angular.js"></script>
+        <script src="../bower_components/angular-resource/angular-resource.js"></script>
+        <script src="../bower_components/angular-route/angular-route.js"></script>
+        <script src="../node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
+        <script src="../node_modules/angular-animate/angular-animate.js"></script>
+        <script src="../node_modules/angular-touch/angular-touch.js"></script>
 
-    <script src="main.js"></script>
-    <script src="edit/editController.js"></script>
-    <script src="list/listController.js"></script>
-    <script src="create/createController.js"></script>
-    <script src="details/detailsController.js"></script>
-    <script src="services/FilmFactory.js"></script>
+        <script src="main.js"></script>
+        <script src="edit/editController.js"></script>
+        <script src="list/listController.js"></script>
+        <script src="create/createController.js"></script>
+        <script src="details/detailsController.js"></script>
+        <script src="services/factory/FilmFactory.js"></script>
+        <script src="services/constant/ratingConst.js"></script>
 
-</head>
-<body ng-app="main">
+    </head>
 
-<div ng-view></div>
+    <body ng-app="main">
 
-</body>
+        <div ng-view></div>
+
+    </body>
 </html>

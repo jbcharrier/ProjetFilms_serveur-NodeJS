@@ -1,13 +1,18 @@
-<h1>Detail du film</h1>
-
-<h2>{{film.name}}</h2>
-
-<img ng-src="film.affiche" alt="affiche non reconnue">
-<ul>
-    <li>Sorti en {{Date(film.releaseDate)}}</li>
-    <li>Réalisé par {{film.realisator}}</li>
-    <li>Avec <span ng-repeat="actor in film.actors">{{actor.name}}</span></li>
-    <li>Score : {{film.rating}}</li>
-</ul>
-
-<a ng-href="/#/">Retour à la liste</a>
+<div class="container">
+    <main class="text-center mainDetailsView">
+        <h1>Détails du film</h1>
+        <h2>{{film.name}}</h2>
+        <img ng-src="{{film.affiche}}" alt="Affiche non-reconnue">
+        <ul class="list-unstyled">
+            <li><h5>Sorti le {{film.releaseDate}}</h5></li>
+            <li>Réalisé par {{film.realisator}}</li>
+            <li>Avec :
+                <p ng-repeat="actorItem in film.actors">
+                    <span>{{actorItem.actor}}</span>
+                </p>
+            </li>
+            <li>Score : {{film.rating}} / 5</li>
+        </ul>
+        <a class="btn btn-default btn-sm btn-primary btn-return" ng-href="/#/">Retour à la liste</a>
+    </main>
+</div>

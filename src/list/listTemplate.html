@@ -1,32 +1,17 @@
 <div class="container">
-<h1>List View</h1>
-
-<ul>
-    <li ng-repeat="film in films"> {{ film.name }}
-        <a class="btn btn-default" ng-href="#/details/{{film.name}}">Détails</a>
-        <a class="btn btn-primary" ng-href="#/edit/{{ film.name}}">edit</a>
-    </li>
-</ul>
-<a class="btn btn-success" ng-href="#/create">Ajouter un film</a>
-
-    <input type="text" ng-model="toto">
-    {{toto}}
-
-    <input type="text" ng-model="tutu">
-    {{tutu}}
-
-
-    <form name="myForm">
-
+    <main class="text-center mainListView">
+        <h1>Liste des films disponible</h1>
         <label>
-            <input type="text" name="name" ng-model="user.firstName" required>
+            Filtrer par nom de film
+            <input class="form-control input-lg" type="text" ng-model="mySearch">
         </label>
-
-        <select ng-model="user.gender" name="genderSelect" required ng-options="type.value as type.label for type in typeGender"></select>
-        {{user.gender}}
-
-        <button>Submit</button>
-
-    </form>
-
+        <ul class="list-unstyled">
+            <li ng-repeat="film in films | filter:{name:mySearch}" class="filmInList">
+                <p>{{ film.name }}</p>
+                <a class="btn btn-default" ng-href="#/details/{{film.name}}">Détails sur le film</a>
+                <a class="btn btn-primary" ng-href="#/edit/{{film.name}}">Modifier le film</a>
+            </li>
+        </ul>
+        <a class="btn btn-lg btn-success addFilmBtn" ng-href="#/create">Ajouter un film</a>
+    </main>
 </div>

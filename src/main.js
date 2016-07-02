@@ -5,8 +5,8 @@ angular.module('main').config(function ($routeProvider) {
     $routeProvider
         .when('/list', {
             templateUrl: 'list/listTemplate.html',
-            controller: 'listController',
-            //reloadOnSearch: 'true'
+            controller: 'listController'
+            // reloadOnSearch: 'true'
         })
         .when('/edit/:id', {
             templateUrl: 'edit/editTemplate.html',

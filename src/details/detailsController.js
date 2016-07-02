@@ -1,9 +1,5 @@
 angular.module('main')
-    .controller('detailsController', function ($scope, Film, $routeParams) {
-
+    .controller('detailsController', function ($scope, Film, $routeParams, RATING) {
         var id = $routeParams.id;
-
-        Film.get(id).then(function (film) {
-            $scope.film = film.data;
-        });
+        $scope.film = Film.get(id);
     });

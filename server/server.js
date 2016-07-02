@@ -1,18 +1,16 @@
-
 var express = require('express');
 var http = require('http');
 
 var swig = require('swig');
 var swig = new swig.Swig();
 
-
 var list = require('./listFilm.js');
 
 var app = express();
 
 var bodyParser = require('body-parser');
-app.use( bodyParser.json() );       // to support JSON-encoded bodies
-app.use(bodyParser.urlencoded());     // to support URL-encoded bodies
+app.use(bodyParser.json() );   // to support JSON-encoded bodies
+app.use(bodyParser.urlencoded());   // to support URL-encoded bodies
 
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -21,15 +19,12 @@ app.use(function (req, res, next) {
     next();
 });
 
-
 app.set('views', './');
 app.engine('html', swig.renderFile);
 app.set('view engine', 'html');
 
-
 var port = process.env.PORT || '3002';
 app.set('port', port);
-
 
 var getByName = function(name, inList){
     return inList.find(function(item){return item.name == name});
@@ -67,8 +62,8 @@ app.post('/films', function(req, res){
             actors: req.body.actors,
             releaseDate: req.body.releaseDate,
             rating: req.body.rating});
-        res.send(JSON.stringify(getIndexByName(name,list)));
-    }else{
+        res.send(JSON.stringify(getIndexByName(req.body.name,list)));
+    } else {
         res.status(404).send("-1");
     }
 });
@@ -126,7 +121,6 @@ app.patch('/films/:name', function(req,res){
     }
 });
 
-
 app.put('/films/:name/actors/:actorName', function(req){
     if(req.params['name']){
         list[getIndexByName(req.params['name'],list)].actors[req.params['actorName']].name = JSON.parse(req.body).name;
@@ -166,6 +160,3 @@ app.delete('/films/:name/actors/:actorName', function(req,res){
 http.createServer(app).listen(port, function (err) {
     console.log('listening in http://localhost:' + port);
 });
-
-module.exports = app;
-

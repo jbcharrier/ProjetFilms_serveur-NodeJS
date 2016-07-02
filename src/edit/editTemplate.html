@@ -1,47 +1,48 @@
 <div class="container">
     <main class="text-center" id="main-edit-view">
-<h1>Edit View</h1>
-
-<form name="myEditForm">
-    <div class="form-group">
-
-    <label>
-        Name
-        <input class="form-control input-lg " type="text" ng-model="film.name" id="filmName" required>
-    </label>
-    <br/>
-
-    <label>
-        Affiche
-        <input class="form-control input-lg" type="text" ng-model="film.affiche">
-    </label>
-    <br/>
-    <label>
-        Réalisateur
-        <input class="form-control input-lg" type="text" ng-model="film.realisator">
-    </label>
-    <br/>
-    <!--<input type="text" ng-model="film.actors">-->
-    <label>
-        Date de sortie
-        <input class="form-control input-lg" type="text" ng-model="film.releaseDate">
-    </label>
-    <br/>
-    <!--<label>
-        Note
-        <input class="form-control input-lg" type="text" ng-model="film.rating">
-    </label>
-    <br/>-->
-        <label>
-            <select ng-model="film.rating" name="rating"  ng-options="rate.value as rate.label for rate in filmRating" class="form-control input-lg" required></select>
-            {{film.rating}}
-        </label>
-        <br/>
-    <button class="btn btn-success btn-lg" ng-click="save(film)" ng-disabled="">SAVE</button>
-
-    </div>
-</form>
-
-<a class="btn btn-default btn-sm btn-primary btn-return" ng-href="/#/">Retour à la liste</a>
-</main>
+        <h1>Edit View</h1>
+            <form name="myEditForm">
+                <div class="form-group">
+                    <label>
+                        Name
+                        <input class="form-control input-lg" type="text" ng-model="film.name" id="filmName" required>
+                    </label>
+                    <br/>
+                    <label>
+                        Affiche (URL)
+                        <input class="form-control input-lg" type="text" ng-model="film.affiche">
+                    </label>
+                    <br/>
+                    <label>
+                        Réalisateur
+                        <input class="form-control input-lg" type="text" ng-model="film.realisator">
+                    </label>
+                    <br/>
+                    <label>
+                        <h4>Acteurs</h4>
+                        <div ng-repeat="actorItem in film.actors">
+                            Acteur {{$index + 1}}
+                            <input class="form-control input-lg" type="text" ng-model="actorItem.actor">
+                        </div>
+                    </label>
+                    <br/>
+                    <label>
+                        Date de sortie
+                        <input class="form-control input-lg" type="text" ng-model="film.releaseDate">
+                    </label>
+                    <br/>
+                    <label>
+                        Note
+                        <select ng-model="film.rating"
+                                name="rating"
+                                ng-options="rate.label as rate.value for rate in rating"
+                                class="form-control input-lg" required>
+                        </select>
+                    </label>
+                    <br/>
+                    <button class="btn btn-success btn-lg" ng-click="save(film)" ng-disabled="">SAVE</button>
+                </div>
+            </form>
+        <a class="btn btn-default btn-sm btn-primary btn-return" ng-href="/#/">Retour à la liste</a>
+    </main>
 </div>

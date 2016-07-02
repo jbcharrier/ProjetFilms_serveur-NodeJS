@@ -1,18 +1,14 @@
 angular.module('main')
-    .controller('editController', function ($scope, $routeParams, Film) {
+    .controller('editController', function ($scope, $q, $routeParams, Film, RATING) {
 
         var id = $routeParams.id;
 
-        Film.get(id).then(function (film) {
-            $scope.film = film.data;
-        });
+        $scope.film = Film.get(id);
+        
+        $scope.rating = RATING;
+        console.log('RATING', RATING);
 
-        $scope.save = function (film) {
+        $scope.save = function(film){ 
             Film.save(id, film);
         };
-
-        $scope.filmRating = [{label: "*", value: "Nanar"}, {label: "**", value: "Bof"}, {label: "***", value: "Pas mal"}, {label: "****", value: "Top"}, {label: "*****", value: "Chef d'oeuvre"}];
-
-        
-
     });

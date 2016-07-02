@@ -9,3 +9,18 @@
 .btn-return{
     margin-top: 20px;
 }
+
+.mainListView,
+.mainDetailsView
+{
+    margin-top: 3%;
+    padding: 10%;
+}
+
+.filmInList{
+    margin-top: 5%;
+}
+
+.addFilmBtn{
+    margin-top: 5%;
+}
